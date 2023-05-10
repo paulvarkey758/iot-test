@@ -10,5 +10,5 @@ class getDevices(APIView):
         
         devices = Device.objects.all()
         device1 = devices[0]
-
-        return Response(device1.value)
+        context = {"value":device1.value}
+        return Response(context)
